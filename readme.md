@@ -1,5 +1,8 @@
 # Node Postgres
-[Dokumentasi koneksi node postgres](https://node-postgres.com/features/connecting)
+[Dokumentasi koneksi node postgres](https://node-postgres.com/features/connecting#programmatic)
+
+## Pool vs Client
+Perbedaan pool dan client apa? keduanya sama-sama untuk membuat koneksi antara node dan postgres, tetapi **Client** biasa digunakan untuk membuat 1 koneksi yang statis, sedangkan **Pool** digunakan untuk membuat koneksi dinamis yang banyak, sehingga jika kita ingin membuat aplikasi bagusnya menggunakan **Pool**
 
 # Demo Aplikasi
 
