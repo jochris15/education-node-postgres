@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Wendy",
+        "money": 10,
+        "vision": "Mensejahterakan kehidupan wibu dan bangsanya",
+        "PartyId": 1
+    },
+    {
+        "id": 2,
+        "name": "Joshua",
+        "money": 12,
+        "vision": "Mensejahterakan dan mencerdaskan wibu seindonesia",
+        "PartyId": 1
+    },
+    {
+        "id": 3,
+        "name": "Raditya",
+        "money": 14,
+        "vision": "Mensejahterkan preman-preman yang jago query",
+        "PartyId": 2
+    },
+    {
+        "id": 4,
+        "name": "Rudy",
+        "money": 100,
+        "vision": "Mensejahterkan kehidupan programmer yang suka jokes bapack2 xixi",
+        "PartyId": 2
+    }
+]
