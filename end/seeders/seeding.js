@@ -1,41 +1,39 @@
 const pool = require('../config/setup')
-const fs = require('fs')
 
-//Parties
-const data = JSON.parse(fs.readFileSync('./data/parties.json', 'utf-8'))
+const dataParties = require('../data/parties.json')
 
-const parties = data.map(el => {
+const parties = dataParties.map((el) => {
     const { name, leader } = el
     return `('${name}', '${leader}')`
-}).join(',\n')
+}).join(",\n")
 
 const partiesSeed = `
-    INSERT INTO "Parties" ("name", "leader")
+INSERT INTO "Parties" ("name" , "leader")
     VALUES ${parties}
 `
 
-//Candidates
-const data1 = JSON.parse(fs.readFileSync('./data/candidates.json', 'utf-8'))
+const dataCandidates = require('../data/candidates.json')
 
-const candidates = data1.map(el => {
+const candidates = dataCandidates.map((el) => {
     const { name, money, vision, PartyId } = el
     return `('${name}', '${money}', '${vision}', '${PartyId}')`
-}).join(',\n')
+}).join(",\n")
 
-const candidatessSeed = `
-    INSERT INTO "Candidates" ("name", "money", "vision", "PartyId")
+const candidatesSeed = `
+INSERT INTO "Candidates" ("name" , "money", "vision", "PartyId")
     VALUES ${candidates}
 `
 
-async function seeding() {
+async function seed() {
     try {
         await pool.query(partiesSeed)
-        console.log("Insert parties data succeed");
-        await pool.query(candidatessSeed)
-        console.log("Insert candidates data succeed");
+        console.log("Succeed insert data parties");
+
+        await pool.query(candidatesSeed)
+        console.log("Succeed insert data candidates");
     } catch (error) {
-        throw error
+        console.log(error);
     }
 }
 
-seeding()
+seed()

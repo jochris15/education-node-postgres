@@ -1,7 +1,10 @@
 # Node Postgres
+Apa itu Node Postgres? Node Postgres adalah sebuah library yang digunakan untuk menghubungkan aplikasi Node.js dengan database PostgreSQL. 
+
+## Connecting to Postgres
 [Dokumentasi koneksi node postgres](https://node-postgres.com/features/connecting#programmatic)
 
-## Pool vs Client
+### Pool vs Client
 Perbedaan pool dan client apa? keduanya sama-sama untuk membuat koneksi antara node dan postgres, tetapi **Client** biasa digunakan untuk membuat 1 koneksi yang statis, sedangkan **Pool** digunakan untuk membuat koneksi dinamis yang banyak, sehingga jika kita ingin membuat aplikasi bagusnya menggunakan **Pool**
 
 # Demo Aplikasi
@@ -34,7 +37,6 @@ Table Candidates
 | name            | string    |
 | money           | integer   |
 | vision          | string    |
-| action          | string    |
 | PartyId         | serial    |
 
 ---------------------------------
@@ -44,3 +46,8 @@ Table Candidates
 https://www.w3schools.com/sql/sql_insert.asp
 
 Buatlah sebuah seed file untuk memasukan data ke tabel `Parties` & `Candidates`. Data berasal dari folder data.
+
+## **Query**
+Dengan menggunakan `MVC pattern`, buatlah query untuk mendapatkan data sebagai berikut:
+1. Tampilkan semua data dari tabel `Parties` dalam bentuk object instance
+3. Tampilkan semua data dari tabel `Candidates` beserta nama partai yang diikutinya dalam bentuk object instance

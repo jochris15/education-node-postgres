@@ -1,11 +1,7 @@
-const View = require('../views/view')
-const Model = require('../models/model')
+const Model = require("../models")
+const View = require("../views")
 
 class Controller {
-    static help() {
-        View.help()
-    }
-
     static async readParties() {
         try {
             const data = await Model.readParties()

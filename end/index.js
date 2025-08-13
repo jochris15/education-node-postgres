@@ -1,19 +1,17 @@
+const Controller = require("./controllers");
+
 const command = process.argv[2]
-const Controller = require('./controllers/controller')
 
 switch (command) {
-    case "help":
-        Controller.help()
-        break;
-
-    case "readParties":
+    case "parties":
         Controller.readParties()
         break;
 
-    case "readCandidates":
+    case "candidates":
         Controller.readCandidates()
         break;
+
     default:
-        Controller.help()
+        Controller.readParties()
         break;
 }

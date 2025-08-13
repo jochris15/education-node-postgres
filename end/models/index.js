@@ -1,15 +1,15 @@
-const { Party, Candidate } = require('./class')
-const pool = require('../config/setup')
+const pool = require("../config/setup")
+const { Party, Candidate } = require("./class")
 
 class Model {
-    static async readParties(cb) {
+    static async readParties() {
         try {
             const query = `
-                SELECT * FROM "Parties"
+            SELECT * FROM "Parties"
             `
 
             const { rows } = await pool.query(query)
-            const parties = rows.map(el => {
+            const parties = rows.map((el) => {
                 const { name, leader } = el
                 return new Party(name, leader)
             })
@@ -20,16 +20,17 @@ class Model {
         }
     }
 
-    static async readCandidates(cb) {
+    static async readCandidates() {
         try {
             const query = `
-                SELECT c.*, p."name" AS "party" FROM "Candidates" c
+            SELECT c.*, p."name" AS "party" FROM "Candidates" c
                 JOIN "Parties" p ON c."PartyId" = p."id"
-                ORDER BY "name" ASC 
+                ORDER BY c."name" ASC
             `
 
             const { rows } = await pool.query(query)
-            const candidates = rows.map(el => {
+
+            const candidates = rows.map((el) => {
                 const { name, money, vision, party } = el
                 return new Candidate(name, money, vision, party)
             })
