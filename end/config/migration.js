@@ -1,4 +1,4 @@
-const pool = require('../config/setup')
+const pool = require('./setup')
 
 const dropTable = `DROP TABLE IF EXISTS "Candidates", "Parties"`
 

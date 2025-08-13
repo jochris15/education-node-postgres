@@ -1,4 +1,4 @@
-const pool = require('../config/setup')
+const pool = require('./setup')
 
 const dataParties = require('../data/parties.json')
 
